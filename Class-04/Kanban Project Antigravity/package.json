@@ -1,0 +1,15 @@
+{
+  "name": "kanban-project-antigravity",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Streamlined Kanban-style Project Management application",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix frontend run start",
+    "lint": "npm --prefix frontend run lint",
+    "test:unit": "npm --prefix frontend run test:unit",
+    "test:e2e": "npm --prefix frontend run test:e2e",
+    "vercel-build": "npm --prefix frontend run build"
+  }
+}
