@@ -1,0 +1,11 @@
+{
+  "name": "class-06",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix \"Kanban Project\" run dev",
+    "build": "npm --prefix \"Kanban Project\" run build",
+    "start": "npm --prefix \"Kanban Project\" run start",
+    "test": "npm --prefix \"Kanban Project\" run test"
+  }
+}
