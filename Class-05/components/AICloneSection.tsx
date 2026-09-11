@@ -66,12 +66,23 @@ export default function AICloneSection() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: nextMessages.slice(1) }),
       });
-      const result = await response.json();
+
+      let content = "I could not answer that right now.";
+      try {
+        const result = await response.json();
+        content = result.answer || result.error || content;
+      } catch {
+        content =
+          response.status === 504
+            ? "Request timed out on the server. Please try asking again."
+            : `Error ${response.status}: Unable to get response from the clone.`;
+      }
+
       setMessages([
         ...nextMessages,
         {
           role: "assistant",
-          content: result.answer || result.error || "I could not answer that right now.",
+          content,
         },
       ]);
     } catch {
